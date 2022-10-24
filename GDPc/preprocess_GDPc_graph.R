@@ -1,11 +1,6 @@
 library(tidyverse)
 library(readxl)
 library(igraph)
-"./gdp_data/GCP_Release_1.xlsx" #GDP data
-"./gdp_data/cc-est2018-alldata.csv" #population
-"./gdp_data/county_adjacency2010.csv" #county_adjacency
-"./gdp_data/sf12010countydistance100miles" #county distance
-"./gdp_data/CAGDP9/CAGDP9__ALL_AREAS_2001_2018.csv"
 
 raw1 = read_csv("./gdp_data/CAGDP9/CAGDP9__ALL_AREAS_2001_2018.csv",
                 na = c("(NA)", "(D)"))
@@ -257,3 +252,5 @@ save(gdp_pop_data, g_gdp, adj_data, g_ma, mid_atlantic, g_all, gdp_data,
      g_ma_dis1, g_ma_dis2, g_ca_dis1, g_ca_dis2,
      file = "gdp_graph.Rdata")
 
+save(gdp_pop_data, g_gdp, file = "gdp_all.RData")
+save(mid_atlantic, g_ma, file = "gdp_ma.RData")
